@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MyBlog.Models.Article>
+@{
+    ViewBag.Title = "Main";
+}
+
+@foreach(var a in Model)
+{
+    <p>@a.Date / <strong>@a.Title</strong></p>
+    <p>@a.Text</p>
+}
