@@ -23,7 +23,7 @@
         @Html.RadioButtonFor(q => q.Rate, i, new { @checked = i == 1 ? "checked" : "" }) @i
     }
 
-    <strong>@Html.LabelFor(q => q.Word):</strong><br />
+    <strong>@Html.LabelFor(q => q.Favourites):</strong><br />
     foreach (var s in ViewBag.Favourites as IEnumerable<SelectListItem>)
     {
         <input type="checkbox" value="@s.Value" name="Favourites" />@s.Text
@@ -32,8 +32,6 @@
 
     <button type="submit">Submit</button>
 }
-
-
 
 @helper UList(IEnumerable<String> items)
 {

@@ -47,13 +47,11 @@ namespace MyBlog.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    ViewBag.Result = "Thanks for answers, your rate was:" + model.Rate;
-                    return View("QResult");
+                    return View("QResult",model);
                 }
                 ViewBag.NoErrors = false;
                 return View(model);
             }
-            
 
             ViewBag.NoErrors = true;
             return View();

@@ -18,7 +18,7 @@ namespace MyBlog.Models
         static Store()
         {
             countries = new List<String>(new[] { "Ukraine", "Zenonia", "Nortrend" });
-            favourites = new List<String>(new[] { "Main", "Feedback", "Questionnaire" });
+            favourites = new List<String>(new[] { "Home", "Feedback", "Questionnaire" });
             articles = new List<Article>();
             articles.AddRange(new[]
             {

@@ -16,9 +16,8 @@ namespace MyBlog.Models
         [Range(1,5)]
         public Int32 Rate { get; set; }
 
-        [Required]
         [CheckBoxItems(new[] { "Home", "Feedback", "Questionnaire" })]
-        public List<String> Favourites { get; set; }
+        public List<String> Favourites { get; set; } = new List<string>();
 
         [Required]
         public String Word { get; set; }

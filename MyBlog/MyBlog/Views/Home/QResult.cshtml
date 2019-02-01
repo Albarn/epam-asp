@@ -1,7 +1,28 @@
-﻿@{
+﻿@model MyBlog.Models.Questionnaire
+@{
     ViewBag.Title = "QResult";
 }
 
-<h2>QResult</h2>
+<h2>Thanks for answers, your results:</h2>
 
-<p>@ViewBag.Result</p>
+<dl>
+    <dt>@Html.LabelFor(q => q.Word):</dt>
+    <dd>
+        @Html.DisplayFor(q => q.Word)
+    </dd>
+    <dt>@Html.LabelFor(q => q.Country):</dt>
+    <dd>
+        @Html.DisplayFor(q => q.Country)
+    </dd>
+    <dt>@Html.LabelFor(q => q.Rate):</dt>
+    <dd>
+        @Html.DisplayFor(q => q.Rate)
+    </dd>
+    <dt>@Html.LabelFor(q => q.Favourites):</dt>
+    <dd>
+        @foreach(var f in Model.Favourites)
+        {
+            <span>@f </span>
+        }
+    </dd>
+</dl>
