@@ -12,8 +12,6 @@ namespace MyBlog
     {
         protected void Application_Start()
         {
-            ArticlesConfig.Initialize();
-
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

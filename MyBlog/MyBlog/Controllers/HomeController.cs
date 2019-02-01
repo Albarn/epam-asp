@@ -11,7 +11,7 @@ namespace MyBlog.Controllers
     {
         public ActionResult Index()
         {
-            return View(Articles.Instance);
+            return View(Store.Articles);
         }
 
         [HttpGet]
@@ -32,15 +32,12 @@ namespace MyBlog.Controllers
 
         private void InitQuestionnaire()
         {
-            var countries = new List<SelectListItem>();
-            foreach (String country in Countries.Instance)
-            {
-                countries.Add(new SelectListItem() { Text = country, Value = country });
-            }
-            ViewBag.Countries = countries;
-            var favourites = new List<String>();
-            favourites.AddRange(new[] { "Main", "Feedback", "Questionnaire" });
-            ViewBag.Favourites = favourites;
+            ViewBag.Countries = Store
+                .Countries
+                .Select(c => new SelectListItem() { Text = c, Value = c });
+            ViewBag.Favourites = Store
+                .Favourites
+                .Select(f => new SelectListItem() { Text = f, Value = f });
         }
 
         public ActionResult Questionnaire(Questionnaire model)

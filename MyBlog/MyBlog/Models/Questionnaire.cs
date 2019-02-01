@@ -6,16 +6,10 @@ using System.Web;
 
 namespace MyBlog.Models
 {
-    public enum FavouritePage
-    {
-        Main,
-        Feedback,
-        Questionnaire
-    }
-
     public class Questionnaire
     {
         [Required]
+        [RadioItems(new[] { "Ukraine", "Zenonia", "Nortrend" })]
         public String Country { get; set; }
 
         [Required]
@@ -23,8 +17,8 @@ namespace MyBlog.Models
         public Int32 Rate { get; set; }
 
         [Required]
-        [Range(0,2)]
-        public Int32 Favourites { get; set; }
+        [CheckBoxItems(new[] { "Home", "Feedback", "Questionnaire" })]
+        public List<String> Favourites { get; set; }
 
         [Required]
         public String Word { get; set; }
