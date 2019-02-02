@@ -1,10 +1,7 @@
 #output directories
-MyBlog.Web/bin
-MyBlog.Web/obj
+MyBlog/MyBlog/bin
+MyBlog/MyBlog/obj
+MyBlog/packages
 
 #ide preferences
-.vs
-=======
-**/MyBlog/MyBlog.Web/bin
-**/MyBlog/MyBlog.Web/obj
-**/MyBlog/.vs
+MyBlog/.vs
