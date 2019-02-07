@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MyBlog.Models.FeedbackViewModel>
+
+@{
+    ViewBag.Title = "Feedbacks";
+}
+
+<h2>Feedbacks</h2>
+@foreach (var item in Model)
+{
+    <dl>
+        <dt> Author</dt>
+        <dd>@item.Author</dd>
+
+        <dt>Date</dt>
+        <dd>@item.Date.ToString()</dd>
+
+        <dt>Text</dt>
+        <dd>@item.Text</dd>
+    </dl>
+}

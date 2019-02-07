@@ -1,0 +1,16 @@
+﻿@model MyBlog.Models.FeedbackViewModel
+@{
+    ViewBag.Title = "Feedback";
+}
+
+@using (Html.BeginForm())
+{ 
+    @Html.ValidationSummary(false,"", new { @class = "text-danger" })
+    <strong>@Html.LabelFor(f => f.Author):</strong> <br />
+    @Html.TextBoxFor(f => f.Author)<hr />
+    <strong>@Html.LabelFor(f => f.Text):</strong> <br />
+    @Html.TextAreaFor(f => f.Text)<hr />
+    <button type="submit">Submit</button>
+    <input type="hidden" value="@DateTime.Now.ToString()" />
+
+}

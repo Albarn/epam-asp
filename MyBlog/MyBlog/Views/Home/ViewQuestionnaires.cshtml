@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MyBlog.Models.QuestionnaireViewModel>
+
+@{
+    ViewBag.Title = "Questionnaires";
+}
+
+<h2>ViewQuestionnaires</h2>
+@foreach (var item in Model)
+{
+    <dl>
+        <dt>Country</dt>
+        <dd>@item.Country</dd>
+
+        <dt>Favourites</dt>
+        <dd>
+            @foreach (var f in item.Favourites)
+            {
+                <span>@(f + " ").ToString()</span>
+            }
+        </dd>
+
+        <dt>Rate</dt>
+        <dd>@item.Rate.ToString()</dd>
+
+        <dt>Word</dt>
+        <dd>@item.Word</dd>
+    </dl>
+}

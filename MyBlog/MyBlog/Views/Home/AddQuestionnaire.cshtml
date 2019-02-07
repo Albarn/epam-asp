@@ -1,0 +1,44 @@
+﻿@model MyBlog.Models.QuestionnaireViewModel
+@{
+    ViewBag.Title = "Questionnaire";
+}
+
+@using (Html.BeginForm())
+{
+    if (ViewBag.NoErrors == false)
+    {
+        @Html.ValidationSummary(false)
+    }
+    <strong>@Html.LabelFor(q => q.Word):</strong><br />
+    @Html.TextBoxFor(q => q.Word)<br />
+    <span>Examples:</span>
+    @UList(new[] { "cat1", "dog2", "whale3" })
+
+    <strong>@Html.LabelFor(q => q.Country):</strong><br />
+    @Html.DropDownListFor(q => q.Country, ViewBag.Countries as IEnumerable<SelectListItem>)<br />
+
+    <strong>@Html.LabelFor(q => q.Rate):</strong><br />
+    for (int i = 1; i <= 5; i++)
+    {
+        @Html.RadioButtonFor(q => q.Rate, i, new { @checked = i == 1 ? "checked" : "" }) @i
+    }
+
+    <strong>@Html.LabelFor(q => q.Favourites):</strong><br />
+    foreach (var s in ViewBag.Favourites as IEnumerable<SelectListItem>)
+    {
+        <input type="checkbox" value="@s.Value" name="Favourites" />@s.Text
+    }
+    <br />
+
+    <button type="submit">Submit</button>
+}
+
+@helper UList(IEnumerable<String> items)
+{
+    <ul>
+        @foreach (String s in items)
+        {
+            <li>@s</li>
+        }
+    </ul>
+}
