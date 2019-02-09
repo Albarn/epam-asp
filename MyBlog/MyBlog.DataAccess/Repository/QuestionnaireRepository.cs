@@ -7,7 +7,7 @@ namespace MyBlog.DataAccess.Repository
 {
     public class QuestionnaireRepository : IRepository<Questionnaire>
     {
-        private MyBlogContext db = new MyBlogContext();
+        private MyBlogContext db = MyBlogContext.Create();
 
         public void Add(Questionnaire entity)
         {

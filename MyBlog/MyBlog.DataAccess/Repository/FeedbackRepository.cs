@@ -10,7 +10,7 @@ namespace MyBlog.DataAccess.Repository
 {
     public class FeedbackRepository : IRepository<Feedback>
     {
-        private MyBlogContext db = new MyBlogContext();
+        private MyBlogContext db = MyBlogContext.Create();
 
         public void Add(Feedback entity)
         {

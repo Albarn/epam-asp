@@ -11,6 +11,6 @@
     <strong>@Html.LabelFor(f => f.Text):</strong> <br />
     @Html.TextAreaFor(f => f.Text)<hr />
     <button type="submit">Submit</button>
-    <input type="hidden" value="@DateTime.Now.ToString()" />
+    <input type="hidden" name="Date" value="@DateTime.Now.ToString()" />
 
 }

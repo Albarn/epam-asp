@@ -7,8 +7,7 @@ namespace MyBlog.DataAccess.Repository
 {
     public class ArticleRepository : IRepository<Article>
     {
-        //TODO: factory
-        private MyBlogContext db = new MyBlogContext();
+        private MyBlogContext db = MyBlogContext.Create();
 
         public void Add(Article entity)
         {

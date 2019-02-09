@@ -4,7 +4,7 @@
     ViewBag.Title = "Questionnaires";
 }
 
-<h2>ViewQuestionnaires</h2>
+<h2>Questionnaires</h2>
 @foreach (var item in Model)
 {
     <dl>
@@ -15,7 +15,7 @@
         <dd>
             @foreach (var f in item.Favourites)
             {
-                <span>@(f + " ").ToString()</span>
+                <span>@f </span>
             }
         </dd>
 
