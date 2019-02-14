@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -11,5 +12,11 @@ namespace MyBlog.DataAccess.Models
         public String Title { get; set; }
         public DateTime Date { get; set; }
         public String Text { get; set; }
+        public String TagsString { get; set; }
+        [NotMapped]
+        public String[] Tags {
+            get => TagsString.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            set => TagsString = value.Aggregate((s1, s2) => s1 + ',' + s2);
+        }
     }
 }

@@ -151,9 +151,11 @@
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionnaireController.cs" />
+    <Compile Include="Controllers\VoteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ArticleDetailsViewModel.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
     <Compile Include="Models\FeedbackViewModel.cs" />
     <Compile Include="Models\QuestionnaireViewModel.cs" />
@@ -200,9 +202,11 @@
     <Content Include="Views\Questionnaire\AddResult.cshtml" />
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Questionnaire\Index.cshtml" />
+    <Content Include="Views\Home\ArticleDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Vote\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

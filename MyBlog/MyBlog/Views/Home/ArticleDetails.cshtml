@@ -1,0 +1,15 @@
+﻿@model MyBlog.Models.ArticleDetailsViewModel
+@{
+    ViewBag.Title = "Article Details";
+}
+
+<h2>Article Details</h2>
+
+<p>@Model.Date / @Model.Title</p>
+<ul id="tags">
+    @foreach(var tag in Model.Tags)
+    {
+        <li>@tag</li>
+    }
+</ul>
+<p>@Model.Text</p>

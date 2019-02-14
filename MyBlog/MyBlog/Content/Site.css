@@ -55,3 +55,7 @@ aside ul li{
 header *{
     display: inline;
 }
+
+#tags, #tags > li{
+    display:inline;
+}

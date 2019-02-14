@@ -7,4 +7,32 @@
 {
     <p>@a.Date / <strong>@a.Title</strong></p>
     <p>@a.Text</p>
+    @Html.ActionLink(actionName: "ArticleDetails", linkText: "Details", htmlAttributes: new { target = "_blank" },routeValues:new { id = a.Id });
+}
+
+@section aside{
+    @{
+        var votes = ViewBag.Votes as IEnumerable<KeyValuePair<string, int>>;
+        if (votes != null)
+        {
+            <ul>
+                @foreach (var kv in votes)
+                {
+                    <li>@kv.Key : @kv.Value </li>
+                }
+            </ul>
+        }
+        else
+        {
+            using (Html.BeginForm("Vote", "Vote"))
+            {
+                foreach (var a in Model)
+                {
+                    @Html.RadioButton("vote", a.Id, true)@: @a.Title <br />
+        }
+                <button type="submit">submit</button>
+            }
+    }
+}
+    
 }

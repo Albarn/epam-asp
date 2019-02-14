@@ -12,6 +12,7 @@ namespace MyBlog.DataAccess.Models
         public IDbSet<Article> Articles { get; set; }
         public IDbSet<Feedback> Feedbacks { get; set; }
         public IDbSet<Questionnaire> Questionnaires { get; set; }
+        public IDbSet<Vote> Votes { get; set; }
 
         static MyBlogContext()
         {

@@ -25,6 +25,9 @@
                 <li>@Html.ActionLink("Make Questionnaire", "Add", "Questionnaire")</li>
                 <li>@Html.ActionLink("Questionnaire List", "", "Questionnaire")</li>
             </ul>
+            <div>
+                @RenderSection("aside",required:false);
+            </div>
         </aside>
         <hr />
     </div>
