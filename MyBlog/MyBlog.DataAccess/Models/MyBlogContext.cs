@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace MyBlog.DataAccess.Models
         public IDbSet<Feedback> Feedbacks { get; set; }
         public IDbSet<Questionnaire> Questionnaires { get; set; }
         public IDbSet<Vote> Votes { get; set; }
+        public IDbSet<MyUser> MyUsers { get; set; }
+        public IDbSet<Tag> Tags { get; set; }
 
         static MyBlogContext()
         {

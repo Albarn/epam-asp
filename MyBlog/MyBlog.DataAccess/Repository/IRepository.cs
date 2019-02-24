@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBlog.DataAccess.Repository
 {
-    interface IRepository<T>
+    public interface IRepository<T>
     {
         IEnumerable<T> GetAll();
         T Find(params Object[] keyValues);

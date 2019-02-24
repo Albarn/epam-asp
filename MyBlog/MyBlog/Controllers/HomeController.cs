@@ -24,10 +24,10 @@ namespace MyBlog.Controllers
                 Dictionary<String, int> results = new Dictionary<String, int>();
                 foreach (var v in votes.GetAll())
                 {
-                    //set zero as initial value
+                    //set one as initial value
                     if (!results.ContainsKey(v.Article.Title))
                     {
-                        results[v.Article.Title] = 0;
+                        results[v.Article.Title] = 1;
                     }
                     else
                     {
@@ -46,10 +46,11 @@ namespace MyBlog.Controllers
                 .Select(a => new ArticleViewModel()
                 {
                     Date = a.Date,
-                    Text = a.Text.Remove(200),
+                    Text = a.Text.Length>200?a.Text.Remove(200):a.Text,
                     Title = a.Title,
                     Id=a.ArticleId
-                }));
+                })
+                .OrderBy(a=>a.Date));
         }
 
         public ActionResult ArticleDetails(int? id)
@@ -63,7 +64,7 @@ namespace MyBlog.Controllers
                     Date = a.Date,
                     Text = a.Text,
                     Title = a.Title,
-                    Tags = a.Tags
+                    Tags = a.Tags.Select(t=>t.TagString).ToArray()
                 })
                 ?.Single();
             if (model == null) return HttpNotFound();

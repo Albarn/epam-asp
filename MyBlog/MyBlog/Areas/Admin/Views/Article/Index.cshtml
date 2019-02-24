@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MyBlog.Areas.Admin.Models.ArticleItemViewModel>
+@{
+    ViewBag.Title = "Articles";
+}
+
+<h2>Articles</h2>
+
+@Html.ActionLink("Create New", "Create")<br />
+
+@foreach (var a in Model)
+{
+    @a.Date@:/<strong>@a.Title</strong><br />
+    if (a.Tags.Count > 0)
+    {
+
+        @a.Tags.Select(t => t.TagString).Aggregate((s1, s2) => s1 + " | " + s2)
+    }
+    <p>@a.Text</p>
+}
